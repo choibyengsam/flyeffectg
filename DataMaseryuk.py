@@ -47,7 +47,7 @@ if __name__ == "__main__":
     holiday  기념일 (국경일과 법정 공휴일: 1, 아니면 0)
     '''
     ddm = dd.SqliteDB('manseryuk.db')
-    # 음력 생년월일
+    # 양력 생년월일
     year = 1970
     month = 1
     day = 1
