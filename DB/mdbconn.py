@@ -8,23 +8,6 @@ class SqliteDB():
         self.conn = sqlite3.connect(self.BASE_DIR + '\\' + db)
         self.c = self.conn.cursor()
 
-    def CreateMaseryukDB(self, file):
-        '''
-        최초 만세력 자료를 Update 한다.
-        '''
-        sql=open(self.BASE_DIR + '\\' + file).read()
-        self.c.execute(sql)
-
-    def InsertMaseryukDB(self, file):
-        '''
-        최초 만세력 자료를 Insert 한다.
-        DB Browser(SQLite)에서 Insert함
-        '''
-        sqls=open(self.BASE_DIR + '\\' + file).readlines()
-        for sql in sqls:
-            print(sql.strip())
-            self.c.execute(sql.strip())
-
     def GetBirth(self, year, month, day):
         self.c.execute("SELECT * FROM calenda_data WHERE cd_sy='%s' and cd_sm='%s' and cd_sd='%s'" %(year, month, day))
         birthdata = self.c.fetchall()
