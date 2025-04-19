@@ -1,2 +1,2 @@
 pytest
-sqlite3
+sqlite
