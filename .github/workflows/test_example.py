@@ -1,29 +1,4 @@
-name: Run DataMaseryuk.py
+# tests/test_example.py
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  run-datamaseryuk:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-      - name: Run DataMaseryuk.py
-        run: |
-          python DataMaseryuk.py
+def test_sample():
+    assert 1 + 1 == 2  # 기본적인 테스트 예시
